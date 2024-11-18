@@ -8,6 +8,7 @@ import AboutUs from "../pages/aboutUs/AboutUs";
 import Profile from "../pages/profile/Profile";
 import SignIn from "../pages/signIn/SignIn";
 import SignUp from "../pages/signUp/SignUp";
+import PrivateRoute from "../privateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -19,7 +20,14 @@ const router = createBrowserRouter([
       { path: "/startLearning", element: <StartLearning></StartLearning> },
       { path: "/tutorials", element: <Tutorials></Tutorials> },
       { path: "/aboutUs", element: <AboutUs></AboutUs> },
-      { path: "/profile", element: <Profile></Profile> },
+      {
+        path: "/profile",
+        element: (
+          <PrivateRoute>
+            <Profile></Profile>
+          </PrivateRoute>
+        ),
+      },
       { path: "/signin", element: <SignIn></SignIn> },
       { path: "/signup", element: <SignUp></SignUp> },
     ],

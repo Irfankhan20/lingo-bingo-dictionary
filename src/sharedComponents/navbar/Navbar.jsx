@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const Navbar = () => {
-  const userInfo = false;
+  const { user, signOutUser } = useContext(AuthContext);
+
   const navlink = (
     <>
       <li>
@@ -16,9 +19,11 @@ const Navbar = () => {
       <li>
         <NavLink to={"/aboutUs"}>about-us</NavLink>
       </li>
-      <li>
-        <NavLink to={"/profile"}>profile</NavLink>
-      </li>
+      {user && (
+        <li>
+          <NavLink to={"/profile"}>profile</NavLink>
+        </li>
+      )}
     </>
   );
   return (
@@ -56,8 +61,11 @@ const Navbar = () => {
             {navlink}
             <li className=" justify-center font-bold">
               {" "}
-              {userInfo ? (
-                <button className=" btn py-3 bg-button text-text">
+              {user ? (
+                <button
+                  onClick={signOutUser}
+                  className=" btn py-3 bg-button text-text"
+                >
                   SignOut
                 </button>
               ) : (
@@ -71,8 +79,22 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        {userInfo ? (
-          <button className="btn hidden lg:flex text-text">SignOut</button>
+        {user ? (
+          <div className="flex items-center">
+            <button className="flex items-center">
+              <img
+                className=" rounded-full w-8 h-8 mr-3"
+                src={user.photoURL}
+                alt={user.email}
+              />
+            </button>
+            <button
+              onClick={signOutUser}
+              className="btn hidden border-none lg:flex text-text bg-button  font-bold"
+            >
+              SignOut
+            </button>
+          </div>
         ) : (
           <Link
             to={"/signin"}

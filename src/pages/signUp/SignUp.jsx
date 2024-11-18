@@ -1,9 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { UsePhoto } from "../../utilities/ImageHosting";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const SignUp = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from?.pathname || "/";
+  const { createUser, updateUserProfile } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
   const handleShowPassword = () => {
     setShowPassword(!showPassword);
@@ -18,7 +23,25 @@ const SignUp = () => {
     const imageUrl = await UsePhoto(photo);
     const password = form.password.value;
     console.log({ name, email, imageUrl, password });
+    // create user
+    createUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+        handleUpdateProfile(name, imageUrl);
+        e.target.reset();
+        navigate(from, { replace: true });
+      })
+      .catch((error) => console.log("ERROR", error.message));
+
+    //update profile
+    const handleUpdateProfile = (name, imageUrl) => {
+      const profile = { displayName: name, photoURL: imageUrl };
+      updateUserProfile(profile)
+        .then(() => {})
+        .catch((error) => console.error(error));
+    };
   };
+
   return (
     <div className="lg:min-h-[70vh] md:my-10 md:px-8 lg:px-0 md:flex justify-center lg:gap-10 items-center">
       <div className="text-center lg:text-left">
