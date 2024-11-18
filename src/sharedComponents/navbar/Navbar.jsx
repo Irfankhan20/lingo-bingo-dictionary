@@ -5,34 +5,34 @@ const Navbar = () => {
   const navlink = (
     <>
       <li>
-        <NavLink to={""}>Home</NavLink>
+        <NavLink to={"/"}>Home</NavLink>
       </li>
       <li>
-        <NavLink to={"rent"}>start-learning</NavLink>
+        <NavLink to={"/startLearning"}>start-learning</NavLink>
       </li>
       <li>
-        <NavLink to={"sell"}>tutorials</NavLink>
+        <NavLink to={"/tutorials"}>tutorials</NavLink>
       </li>
       <li>
-        <NavLink to={"contact"}>about-us</NavLink>
+        <NavLink to={"/aboutUs"}>about-us</NavLink>
       </li>
       <li>
-        <NavLink to={"profile"}>profile</NavLink>
+        <NavLink to={"/profile"}>profile</NavLink>
       </li>
     </>
   );
   return (
-    <div className="navbar w-full bg-primary text-text">
+    <div className="navbar w-full bg-primary text-text ">
       <div className="navbar-start">
         <Link to={""} className=" mx-4 font-bold font-serif text-text text-2xl">
-          HomifyEstate
+          LingoBingo
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal">{navlink}</ul>
+        <ul className="menu menu-horizontal ">{navlink}</ul>
       </div>
       <div className="navbar-end">
-        <div className="dropdown">
+        <div className="dropdown z-50">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -61,9 +61,12 @@ const Navbar = () => {
                   SignOut
                 </button>
               ) : (
-                <a className="btn  border-none lg:flex bg-button py-3 mt-3  font-bold text-text">
+                <Link
+                  to={"/signin"}
+                  className="btn  border-none lg:flex bg-button py-3 mt-3  font-bold text-text"
+                >
                   Sign In
-                </a>
+                </Link>
               )}
             </li>
           </ul>
