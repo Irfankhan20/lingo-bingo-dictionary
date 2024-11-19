@@ -18,7 +18,7 @@ const CountDown = () => {
           <div className="flex gap-2 items-center pb-8 md:pb-0 lg:pb-0">
             <h1 className="text-[48px] text-black font-bold">
               {counterOn && (
-                <CountUp start={0} end={200} duration={5} delay={0}></CountUp>
+                <CountUp start={0} end={2000} duration={5} delay={0}></CountUp>
               )}
               +
             </h1>
@@ -30,7 +30,7 @@ const CountDown = () => {
           <div className="flex gap-2 items-center pb-8 md:pb-0 lg:pb-0">
             <h1 className="text-[48px] text-black font-bold">
               {counterOn && (
-                <CountUp start={0} end={20} duration={5} delay={0}></CountUp>
+                <CountUp start={0} end={200} duration={5} delay={0}></CountUp>
               )}
               +
             </h1>
@@ -42,7 +42,7 @@ const CountDown = () => {
           <div className="flex gap-2 items-center pb-8 md:pb-0 lg:pb-0">
             <h1 className="text-[48px] text-black font-bold">
               {counterOn && (
-                <CountUp start={0} end={200} duration={5} delay={0}></CountUp>
+                <CountUp start={0} end={800} duration={5} delay={0}></CountUp>
               )}
               +
             </h1>
@@ -54,7 +54,7 @@ const CountDown = () => {
           <div className="flex gap-2 items-center ">
             <h1 className="text-[48px] text-black font-bold">
               {counterOn && (
-                <CountUp start={0} end={30} duration={5} delay={0}></CountUp>
+                <CountUp start={0} end={300} duration={5} delay={0}></CountUp>
               )}
               +
             </h1>
