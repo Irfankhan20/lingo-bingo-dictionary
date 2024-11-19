@@ -1,7 +1,13 @@
+import Banner from "../../components/banner/Banner";
+import SliderFlag from "../../components/sliderFlag/SliderFlag";
+import WelcomeSms from "../../components/welcomeSms/WelcomeSms";
+
 const Home = () => {
   return (
     <div>
-      <h1>this is homne page</h1>
+      <WelcomeSms></WelcomeSms>
+      <Banner></Banner>
+      <SliderFlag></SliderFlag>
     </div>
   );
 };
