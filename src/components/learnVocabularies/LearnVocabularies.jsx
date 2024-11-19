@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const LearnVocabularies = () => {
   return (
-    <div className="md:mt-24 my-10 md:mb-24 md:w-11/12 mx-auto">
+    <div className="md:mt-24 mt-10 md:w-11/12 mx-auto">
       <h1 className="font-bold text-3xl md:text-[40px] underline  text-center mb-10">
         Explore Us
       </h1>
