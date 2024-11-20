@@ -1,14 +1,15 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import banner from "../../assets/learning banner.png";
 import Youtubevideo from "../../components/youtubeVideo/Youtubevideo";
 
 const StartLearning = () => {
   const lessons = useLoaderData();
-  console.log(lessons);
+  const navigate = useNavigate();
+  // console.log(lessons);
   return (
     <div>
       {/* for banner  */}
-      <div className="lg:mb-28 mb-12 border-2">
+      <div className="lg:mb-20 mb-12">
         <img className="md:h-[250px] w-full" src={banner} alt="" />
       </div>
       {/* for lesson card  */}
@@ -19,6 +20,7 @@ const StartLearning = () => {
         <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-3 lg:w-11/12 mx-auto lg:gap-10 ">
           {lessons.map((lesson) => (
             <div
+              onClick={() => navigate(`/lessonDetails/${lesson.Lesson_no}`)}
               className="bg-button rounded-2xl text-center shadow-2xl shadow-button cursor-pointer"
               key={lesson.Lesson_no}
             >

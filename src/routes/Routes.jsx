@@ -9,6 +9,7 @@ import Profile from "../pages/profile/Profile";
 import SignIn from "../pages/signIn/SignIn";
 import SignUp from "../pages/signUp/SignUp";
 import PrivateRoute from "../privateRoute/PrivateRoute";
+import LessonDetails from "../pages/lessonDetails/LessonDetails";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,11 @@ const router = createBrowserRouter([
       },
       { path: "/signin", element: <SignIn></SignIn> },
       { path: "/signup", element: <SignUp></SignUp> },
+      {
+        path: "/lessonDetails/:id",
+        element: <LessonDetails></LessonDetails>,
+        loader: () => fetch("../products.json"),
+      },
     ],
   },
 ]);
