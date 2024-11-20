@@ -17,7 +17,11 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage></ErrorPage>,
     children: [
       { path: "/", element: <Home></Home> },
-      { path: "/startLearning", element: <StartLearning></StartLearning> },
+      {
+        path: "/startLearning",
+        element: <StartLearning></StartLearning>,
+        loader: () => fetch("../lesson.json"),
+      },
       { path: "/tutorials", element: <Tutorials></Tutorials> },
       { path: "/aboutUs", element: <AboutUs></AboutUs> },
       {
