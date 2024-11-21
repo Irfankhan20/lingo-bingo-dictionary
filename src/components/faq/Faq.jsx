@@ -1,5 +1,8 @@
 import { useState } from "react";
 import faq from "../../assets/faq logo.jpg";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const Faq = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -7,9 +10,16 @@ const Faq = () => {
   const handleChange = (index) => {
     setActiveIndex(index);
   };
+  useEffect(() => {
+    Aos.init();
+  }, []);
 
   return (
-    <div className=" mt-16 md:mt-32 mb-16 md:mb-32 w-11/12 mx-auto">
+    <div
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      className=" mt-16 md:mt-32 mb-16 md:mb-32 w-11/12 mx-auto"
+    >
       <div className="text-center">
         <h1 className="font-bold text-3xl md:text-[40px] underline  text-center mb-10">
           Frequently Asked Questions

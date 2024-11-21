@@ -1,8 +1,17 @@
 import { Link } from "react-router-dom";
-
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 const LearnVocabularies = () => {
+  useEffect(() => {
+    Aos.init();
+  }, []);
   return (
-    <div className="md:mt-24 mt-10 md:w-11/12 mx-auto">
+    <div
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      className="md:mt-24 mt-10 md:w-11/12 mx-auto"
+    >
       <h1 className="font-bold text-3xl md:text-[40px] underline  text-center mb-10">
         Explore Us
       </h1>

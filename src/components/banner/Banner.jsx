@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./Banner.css";
+import "animate.css";
 
 const Banner = () => {
   const images = [
@@ -61,7 +62,7 @@ const Banner = () => {
             <div key={id} className="slide">
               <img src={image1} alt={name} className="slide-image" />
               <div className="slide-content">
-                <h3 className="flex gap-5 justify-center items-center">
+                <h3 className="flex gap-5 animate__animated animate__fadeInDown justify-center items-center">
                   <span className="font-bold text-2xl md:text-3xl lg:text-5xl">
                     {name}
                   </span>
@@ -71,8 +72,10 @@ const Banner = () => {
                     alt=""
                   />
                 </h3>
-                <h4 className="lg:text-2xl md:text-xl lg:py-4 py-2">{title}</h4>
-                <p className="text-text lg:text-xl md:max-w-[400px] lg:max-w-[600px]  lg:leading-8">
+                <h4 className="lg:text-2xl animate__animated animate__fadeInDown md:text-xl lg:py-4 py-2">
+                  {title}
+                </h4>
+                <p className="text-text animate__animated animate__fadeInDown lg:text-xl md:max-w-[400px] lg:max-w-[600px]  lg:leading-8">
                   {quote}
                 </p>
               </div>

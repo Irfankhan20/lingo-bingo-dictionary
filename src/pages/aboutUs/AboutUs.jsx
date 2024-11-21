@@ -2,8 +2,14 @@ import { useState } from "react";
 import banner from "../../assets/about us banner.png";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import Star from "../../utilities/Star";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const AboutUs = () => {
+  useEffect(() => {
+    Aos.init();
+  }, []);
   const datas = useLoaderData();
   const navigate = useNavigate();
   console.log(datas);
@@ -31,10 +37,10 @@ const AboutUs = () => {
       </div>
       {/* for title-desc */}
       <div className="w-11/12 lg:pb-3 mx-auto">
-        <h1 className="font-bold text-2xl md:text-3xl md:text-[40px] underline">
+        <h1 className="font-bold text-2xl animate__animated animate__fadeInDown md:text-3xl md:text-[40px] underline">
           About OurSelf:
         </h1>
-        <p className="text-green-600 lg:leading-7 text-lg mt-5 font-semibold mb-5 lg:mb-10">
+        <p className="text-green-600 animate__animated animate__fadeInDown lg:leading-7 text-lg mt-5 font-semibold mb-5 lg:mb-10">
           {isExpanded ? text : previewText}
           <button
             className="text-button underline ml-2 hover:bg-none"
@@ -46,7 +52,7 @@ const AboutUs = () => {
       </div>
       {/* for card  */}
       <div>
-        <h1 className="font-bold pb-5 w-11/12 mx-auto text-2xl md:text-3xl md:text-[40px] underline">
+        <h1 className="font-bold pb-5 animate__animated animate__fadeInDown w-11/12 mx-auto text-2xl md:text-3xl md:text-[40px] underline">
           Our services:
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-11/12 mx-auto ">
@@ -84,8 +90,12 @@ const AboutUs = () => {
       </div>
 
       {/* mail  */}
-      <div className="w-11/12 mx-auto">
-        <h1 className="font-bold text-2xl pb-6 lg:pb-10 mt-16 lg:mt-10 md:text-3xl md:text-[40px] underline">
+      <div
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        className="w-11/12 mx-auto "
+      >
+        <h1 className="font-bold text-2xl pb-6 lg:pb-10 mt-16 lg:mt-10 md:text-3xl md:text-[40px] animate__animated animate__fadeInDown underline">
           Mail Us for Contact:
         </h1>
         <div className="shadow-2xl p-10 border-2 rounded-2xl border-primary relative py-12 mx-auto ">

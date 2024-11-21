@@ -1,6 +1,7 @@
 import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import banner from "../../assets/learning banner.png";
 import Youtubevideo from "../../components/youtubeVideo/Youtubevideo";
+import "animate.css";
 
 const StartLearning = () => {
   const lessons = useLoaderData();
@@ -14,10 +15,10 @@ const StartLearning = () => {
       </div>
       {/* for lesson card  */}
       <div className="w-11/12 mx-auto">
-        <h1 className="font-bold text-2xl md:text-3xl md:text-[40px] underline ">
+        <h1 className="font-bold  animate__animated animate__fadeInDown text-2xl md:text-3xl md:text-[40px] underline ">
           All Lessons:
         </h1>
-        <p className="text-green-600  mt-3 font-semibold mb-5 lg:mb-10">
+        <p className="text-green-600  mt-3 font-semibold  animate__animated animate__fadeInDown mb-5 lg:mb-10">
           [Note: Click on the card to see details of each lesson]
         </p>
         <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-3  lg:gap-10 ">
@@ -37,7 +38,7 @@ const StartLearning = () => {
       </div>
       {/* for yt video  */}
       <div className="lg:mt-32 mt-16 w-11/12 mx-auto">
-        <h1 className="font-bold text-2xl md:text-3xl md:text-[40px] underline mb-5 lg:mb-10  ">
+        <h1 className="font-bold text-2xl animate__animated animate__fadeInDown md:text-3xl md:text-[40px] underline mb-5 lg:mb-10  ">
           Youtube Video for Learn Alphabet:
         </h1>
         <div className="grid lg:grid-cols-3 grid-cols-1 lg:space-y-0 space-y-8 lg:gap-5 ">

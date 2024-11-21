@@ -1,7 +1,13 @@
 import { useState } from "react";
 import "./FlashCards.css";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const Flashcards = () => {
+  useEffect(() => {
+    Aos.init();
+  }, []);
   const questions = [
     {
       question: "What does 'Ameliorate' mean?",
@@ -38,7 +44,11 @@ const Flashcards = () => {
   };
 
   return (
-    <div className="quizzes mt-16 md:mt-32 lg:w-11/12 mx-auto text-center">
+    <div
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      className="quizzes mt-16 md:mt-32 lg:w-11/12 mx-auto text-center"
+    >
       <h2 className="font-bold text-3xl md:text-[40px] underline  text-center mb-10">
         Quizzes Games
       </h2>

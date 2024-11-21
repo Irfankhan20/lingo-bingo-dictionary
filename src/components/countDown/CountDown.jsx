@@ -1,12 +1,23 @@
 import { useRef, useState } from "react";
 import CountUp from "react-countup";
 import ScrollTrigger from "react-scroll-trigger";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const CountDown = () => {
   const countdownRef = useRef(null);
   const [counterOn, setCounterOn] = useState(false);
+  useEffect(() => {
+    Aos.init();
+  }, []);
   return (
-    <div ref={countdownRef} className="mt-16 md:mt-32">
+    <div
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      ref={countdownRef}
+      className="mt-16 md:mt-32"
+    >
       <h1 className="font-bold text-3xl md:text-[40px] underline  text-center mb-10">
         Overall Info
       </h1>

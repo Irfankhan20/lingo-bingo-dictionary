@@ -72,7 +72,7 @@ const SignUp = () => {
   };
 
   return (
-    <div className="lg:min-h-[70vh] md:my-10 md:px-8 lg:px-0 md:flex justify-center lg:gap-10 items-center">
+    <div className="lg:min-h-[70vh]  lg:mt-[67px] md:mt-[60px] mt-[62px] md:my-10 md:px-8 lg:px-0 md:flex justify-center lg:gap-10 items-center">
       <div className="text-center lg:text-left">
         <h1 className="text-3xl mt-8 md:mt-0 lg:mt-0 md:mb-8 md:text-start text-center">
           Signup to{" "}
