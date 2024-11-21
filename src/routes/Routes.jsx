@@ -37,7 +37,11 @@ const router = createBrowserRouter([
       { path: "/signup", element: <SignUp></SignUp> },
       {
         path: "/lessonDetails/:id",
-        element: <LessonDetails></LessonDetails>,
+        element: (
+          <PrivateRoute>
+            <LessonDetails></LessonDetails>
+          </PrivateRoute>
+        ),
         loader: () => fetch("../products.json"),
       },
     ],
