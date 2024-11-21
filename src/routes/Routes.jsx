@@ -23,7 +23,14 @@ const router = createBrowserRouter([
         element: <StartLearning></StartLearning>,
         loader: () => fetch("../lesson.json"),
       },
-      { path: "/tutorials", element: <Tutorials></Tutorials> },
+      {
+        path: "/tutorials",
+        element: (
+          <PrivateRoute>
+            <Tutorials></Tutorials>
+          </PrivateRoute>
+        ),
+      },
       { path: "/aboutUs", element: <AboutUs></AboutUs> },
       {
         path: "/profile",

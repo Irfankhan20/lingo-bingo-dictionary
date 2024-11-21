@@ -36,11 +36,11 @@ const StartLearning = () => {
         </div>
       </div>
       {/* for yt video  */}
-      <div className="lg:mt-32 mt-16 lg:w-11/12 mx-auto">
+      <div className="lg:mt-32 mt-16 w-11/12 mx-auto">
         <h1 className="font-bold text-2xl md:text-3xl md:text-[40px] underline mb-5 lg:mb-10  ">
           Youtube Video for Learn Alphabet:
         </h1>
-        <div className="grid lg:grid-cols-3 grid-cols-1 lg:space-y-0 space-y-8 lg:gap-5">
+        <div className="grid lg:grid-cols-3 grid-cols-1 lg:space-y-0 space-y-8 lg:gap-5 ">
           <Youtubevideo embedId={"Zv55AD9yZKc"}></Youtubevideo>
           <Youtubevideo embedId={"-I7iUUp-cX8"}></Youtubevideo>
           <Youtubevideo embedId={"Yvb3we9HMFo"}></Youtubevideo>

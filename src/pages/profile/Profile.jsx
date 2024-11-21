@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Profile = () => {
   const { user } = useContext(AuthContext);
   return (
-    <div className="w-11/12 mx-auto lg:h-[60vh] ">
+    <div className="w-11/12 mx-auto  ">
       <h1 className="text-center font-semibold text-green-600 text-xl pt-3 lg:pb-8 md:pb-5 pb-7 underline">
         {user.displayName}, welcome to{" "}
         <span className="text-2xl font-semibold text-button">
