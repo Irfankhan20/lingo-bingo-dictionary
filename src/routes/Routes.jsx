@@ -31,7 +31,11 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-      { path: "/aboutUs", element: <AboutUs></AboutUs> },
+      {
+        path: "/aboutUs",
+        element: <AboutUs></AboutUs>,
+        loader: () => fetch("../aboutUs.json"),
+      },
       {
         path: "/profile",
         element: (

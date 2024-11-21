@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "image": "https://i.ibb.co.com/GQDFJjL/ban1.jpg",
+    "title": "Beginner Hindi Lessons",
+    "description": "Learn the basics of Hindi with step-by-step lessons tailored for new learners.",
+    "ratings": 4.8
+  },
+  {
+    "id": 2,
+    "image": "https://i.ibb.co.com/17khKnL/ban2.jpg",
+    "title": "Vocabulary Games",
+    "description": "Boost your vocabulary with fun, interactive, and challenging word games.",
+    "ratings": 4.6
+  },
+  {
+    "id": 3,
+    "image": "https://i.ibb.co.com/272jZ1N/ban3.jpg",
+    "title": "Cultural Insights",
+    "description": "Explore India’s culture while enhancing your language skills through curated lessons.",
+    "ratings": 4.9
+  },
+  {
+    "id": 4,
+    "image": "https://i.ibb.co.com/0hZZg6B/ban4.jpg",
+    "title": "Audio-Visual Tutorials",
+    "description": "Master Hindi through engaging video lessons and audio pronunciation guides.",
+    "ratings": 5.0
+  }
+]
