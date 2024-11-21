@@ -28,7 +28,7 @@ const Navbar = () => {
   );
   return (
     <div>
-      <div className="navbar w-full bg-primary text-text ">
+      <div className="navbar fixed z-50  w-full bg-primary text-text ">
         <div className="navbar-start">
           <Link
             to={""}

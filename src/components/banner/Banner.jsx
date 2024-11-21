@@ -52,7 +52,7 @@ const Banner = () => {
   }, [images.length]);
 
   return (
-    <section className="banner lg:h-[60vh] md:h-[50vh] h-[40vh]">
+    <section className="banner mt-5 lg:h-[60vh] md:h-[50vh] h-[40vh]">
       {images.map((item, itemIndex) => {
         const { id, image1, image2, name, title, quote } = item;
 

@@ -20,7 +20,7 @@ const AboutUs = () => {
   const previewText = text.split(" ").slice(0, 80).join(" ") + "...";
 
   return (
-    <div className=" mb-12 md:mb-24">
+    <div className=" mb-12 md:mb-24 lg:mt-[67px] md:mt-[60px] mt-[62px]">
       {/* for banner */}
       <div className="lg:mb-20 mb-12">
         <img

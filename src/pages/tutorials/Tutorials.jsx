@@ -4,7 +4,7 @@ import Youtubevideo from "../../components/youtubeVideo/Youtubevideo";
 
 const Tutorials = () => {
   return (
-    <div>
+    <div className="lg:mt-[67px] md:mt-[60px] mt-[62px]">
       {/* image  */}
       <div className="lg:mb-20 mb-12">
         <img className="md:h-[250px] w-full" src={banner} alt="" />

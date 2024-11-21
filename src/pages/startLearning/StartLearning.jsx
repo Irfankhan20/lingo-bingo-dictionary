@@ -7,7 +7,7 @@ const StartLearning = () => {
   const navigate = useNavigate();
   // console.log(lessons);
   return (
-    <div>
+    <div className="lg:mt-[67px] md:mt-[60px] mt-[62px]">
       {/* for banner  */}
       <div className="lg:mb-20 mb-12">
         <img className="md:h-[250px] w-full" src={banner} alt="" />
