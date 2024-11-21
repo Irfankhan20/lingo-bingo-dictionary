@@ -1,11 +1,12 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import CountUp from "react-countup";
 import ScrollTrigger from "react-scroll-trigger";
 
 const CountDown = () => {
+  const countdownRef = useRef(null);
   const [counterOn, setCounterOn] = useState(false);
   return (
-    <div className="mt-16 md:mt-32">
+    <div ref={countdownRef} className="mt-16 md:mt-32">
       <h1 className="font-bold text-3xl md:text-[40px] underline  text-center mb-10">
         Overall Info
       </h1>

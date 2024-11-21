@@ -28,21 +28,21 @@ const LessonDetails = () => {
         <img className="md:h-[250px] w-full" src={banner} alt="" />
       </div>
       {/* title  */}
-      <div className="lg:w-11/12 mx-auto mb-5 lg:mb-10">
+      <div className="w-11/12 mx-auto mb-5 lg:mb-10">
         <h1 className="font-bold text-2xl md:text-3xl md:text-[40px] underline">
           Lesson Details of Lesson No:- {id}
         </h1>
         <p className="text-green-600 mt-2 mb-2 font-semibold">
           [Note: Click on the card to hear the word pronounced by voice]
         </p>
-        <p className=" font-semibold flex items-center gap-2">
+        <div className=" font-semibold flex items-center gap-2">
           Easy Word Card{" "}
-          <div className="w-[20px] h-[20px] bg-green-100 border border-green-400 text-green-700"></div>
-        </p>
-        <p className="mb-5 font-semibold lg:mb-10 mt-2 flex items-center gap-2">
+          <p className="w-[20px] h-[20px] bg-green-100 border border-green-400 text-green-700"></p>
+        </div>
+        <div className="mb-5 font-semibold lg:mb-10 mt-2 flex items-center gap-2">
           Medium Word Card{" "}
-          <div className="w-[20px] h-[20px] bg-yellow-50 border border-yellow-500 text-yellow-700"></div>
-        </p>
+          <p className="w-[20px] h-[20px] bg-yellow-50 border border-yellow-500 text-yellow-700"></p>
+        </div>
       </div>
       {/* card  */}
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 w-11/12 mx-auto ">

@@ -13,11 +13,14 @@ const StartLearning = () => {
         <img className="md:h-[250px] w-full" src={banner} alt="" />
       </div>
       {/* for lesson card  */}
-      <div>
-        <h1 className="font-bold text-2xl md:text-3xl md:text-[40px] underline mb-5 lg:mb-10  lg:w-11/12 mx-auto">
-          Lessons:
+      <div className="w-11/12 mx-auto">
+        <h1 className="font-bold text-2xl md:text-3xl md:text-[40px] underline ">
+          All Lessons:
         </h1>
-        <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-3 lg:w-11/12 mx-auto lg:gap-10 ">
+        <p className="text-green-600  mt-3 font-semibold mb-5 lg:mb-10">
+          [Note: Click on the card to see details of each lesson]
+        </p>
+        <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-3  lg:gap-10 ">
           {lessons.map((lesson) => (
             <div
               onClick={() => navigate(`/lessonDetails/${lesson.Lesson_no}`)}

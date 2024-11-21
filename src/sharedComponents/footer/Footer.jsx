@@ -30,7 +30,7 @@ const Footer = () => {
             <br className="md:hidden" /> News & Mores
           </p>
           {/* input box  */}
-          <div className="bg-white flex pr-1 py-1 rounded-lg w-[300px] md:w-[250px] lg:w-[321px]">
+          <div className="bg-white flex pr-1 py-1 rounded-lg w-[315px] md:w-[250px] lg:w-[321px]">
             <input
               className="lg:w-[400px] lg:h-[45px] md:pl-3 pl-[58px] lg:pl-5"
               type="search"

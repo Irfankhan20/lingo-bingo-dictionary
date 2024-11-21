@@ -2,31 +2,68 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const SignIn = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const from = location.state?.from?.pathname || "/";
-  const { signInUser } = useContext(AuthContext);
+  const { signInUser, signupWihtGoogle } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
+
   const handleShowPassword = () => {
     setShowPassword(!showPassword);
   };
+
+  const googleSignIn = () => {
+    signupWihtGoogle()
+      .then((result) => {
+        console.log("Google Sign-In successful:", result.user);
+        navigate(from, { replace: true });
+        toast.success("Successfully logged in with Google!");
+      })
+      .catch((err) => {
+        console.error("Google Sign-In error:", err.message);
+        toast.error("Google sign-in failed. Please try again.");
+      });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
     console.log({ email, password });
-    // create user
+
+    // Create user
     signInUser(email, password)
       .then((result) => {
         console.log(result);
         e.target.reset();
+        toast.success("Login successful!", {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        });
         navigate(from, { replace: true });
       })
-      .catch((error) => console.log("ERROR", error.message));
+      .catch((error) => {
+        console.error(error);
+        toast.error("Login failed. Please check your email and password.", {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        });
+      });
   };
+
   return (
     <div className="lg:min-h-[70vh] md:my-10 md:px-8 lg:px-0 md:flex justify-center lg:gap-10 items-center">
       <div className="text-center lg:text-left">
@@ -35,7 +72,7 @@ const SignIn = () => {
           <span className="text-text font-bold italic">LINGOBINGO</span>
         </h1>
       </div>
-      <div className=" bg-base-100 w-full px-2 max-w-lg shadow-2xl">
+      <div className="bg-base-100 w-full px-2 max-w-lg shadow-2xl">
         <form onSubmit={handleSubmit} className="card-body">
           <div className="form-control">
             <label className="label">
@@ -94,28 +131,28 @@ const SignIn = () => {
               Login
             </button>
           </div>
-          <div className="text-center  mt-6">
-            <p className="text-lg  divider ">Or Connect With</p>
+          <div className="text-center mt-6">
+            <p className="text-lg divider ">Or Connect With</p>
             <div className="my-4">
-              <button className="px-4">
+              <button onClick={googleSignIn} className="px-4">
                 <img
                   className="w-10"
                   src="https://i.ibb.co/ftwyb00/Google-G-Logo-svg.png"
-                  alt=""
+                  alt="Google"
                 />
               </button>
               <button className="px-4">
                 <img
                   className="w-10"
                   src="https://i.ibb.co/VxKN3Mg/github.png"
-                  alt=""
+                  alt="GitHub"
                 />
               </button>
               <button className="px-4">
                 <img
                   className="w-10"
                   src="https://i.ibb.co.com/TYk9y2B/Facebook-Logo-2023-removebg-preview.png"
-                  alt=""
+                  alt="Facebook"
                 />
               </button>
             </div>
@@ -133,6 +170,7 @@ const SignIn = () => {
           </div>
         </form>
       </div>
+      <ToastContainer />
     </div>
   );
 };
