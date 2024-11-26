@@ -10,6 +10,8 @@ import SignIn from "../pages/signIn/SignIn";
 import SignUp from "../pages/signUp/SignUp";
 import PrivateRoute from "../privateRoute/PrivateRoute";
 import LessonDetails from "../pages/lessonDetails/LessonDetails";
+import ForgotPassword from "../pages/signIn/ForgotPassword";
+import UpdateProfile from "../components/updateProfile/UpdateProfile";
 
 const router = createBrowserRouter([
   {
@@ -46,6 +48,8 @@ const router = createBrowserRouter([
       },
       { path: "/signin", element: <SignIn></SignIn> },
       { path: "/signup", element: <SignUp></SignUp> },
+      { path: "/updateProfile", element: <UpdateProfile></UpdateProfile> },
+      { path: "/forgotPassword", element: <ForgotPassword></ForgotPassword> },
       {
         path: "/lessonDetails/:id",
         element: (

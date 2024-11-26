@@ -3,6 +3,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import { useContext, useState } from "react";
 import { UsePhoto } from "../../utilities/ImageHosting";
 import { AuthContext } from "../../provider/AuthProvider";
+import { toast } from "react-toastify";
 
 const SignUp = () => {
   const location = useLocation();
@@ -55,6 +56,7 @@ const SignUp = () => {
     // Create user
     createUser(email, password)
       .then((result) => {
+        toast.success("login successful!");
         console.log(result.user);
         handleUpdateProfile(name, imageUrl);
         form.reset();

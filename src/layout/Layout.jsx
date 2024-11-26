@@ -1,6 +1,8 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../sharedComponents/navbar/Navbar";
 import Footer from "../sharedComponents/footer/Footer";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Layout = () => {
   return (
@@ -12,6 +14,7 @@ const Layout = () => {
       <div className="flex-shrink-0">
         <Footer></Footer>
       </div>
+      <ToastContainer autoClose={2000} position="top-center" />
     </div>
   );
 };

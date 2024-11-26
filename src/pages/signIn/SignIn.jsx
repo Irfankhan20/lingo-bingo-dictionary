@@ -2,14 +2,13 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 
 const SignIn = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const from = location.state?.from?.pathname || "/";
-  const { signInUser, signupWihtGoogle } = useContext(AuthContext);
+  const { signInUser, signupWihtGoogle, setEmail } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
 
   const handleShowPassword = () => {
@@ -21,7 +20,7 @@ const SignIn = () => {
       .then((result) => {
         console.log("Google Sign-In successful:", result.user);
         navigate(from, { replace: true });
-        toast.success("Successfully logged in with Google!");
+        toast.success("login successful!");
       })
       .catch((err) => {
         console.error("Google Sign-In error:", err.message);
@@ -40,16 +39,10 @@ const SignIn = () => {
     signInUser(email, password)
       .then((result) => {
         console.log(result);
-        e.target.reset();
-        toast.success("Login successful!", {
-          position: "top-right",
-          autoClose: 3000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-        });
+
         navigate(from, { replace: true });
+        toast.success("login successful!");
+        e.target.reset();
       })
       .catch((error) => {
         console.error(error);
@@ -85,6 +78,7 @@ const SignIn = () => {
               <input
                 type="email"
                 name="email"
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Your Email"
                 className="input input-bordered shadow-lg"
                 required
@@ -121,9 +115,12 @@ const SignIn = () => {
               </span>
             </div>
             <label className="label">
-              <a href="#" className="text-base label-text-alt link link-hover">
+              <Link
+                to="/forgotPassword"
+                className="text-base label-text-alt link link-hover"
+              >
                 Forgot password?
-              </a>
+              </Link>
             </label>
           </div>
           <div className="form-control mt-6">
@@ -170,7 +167,6 @@ const SignIn = () => {
           </div>
         </form>
       </div>
-      <ToastContainer />
     </div>
   );
 };

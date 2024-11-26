@@ -38,7 +38,7 @@ const Profile = () => {
             <h1 className="text-xl pt-1">{user.email}</h1>
           </div>
           {/* button  */}
-          <Link>
+          <Link to="/updateProfile">
             <button className="px-5 mt-8 py-3 text-text bg-button font-bold rounded-xl shadow-xl">
               Update Profile
             </button>

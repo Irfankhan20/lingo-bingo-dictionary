@@ -10,6 +10,12 @@ const LessonDetails = () => {
   const [selectedItem, setSelectedItem] = useState(null);
   const [lessonsData, setLessonsData] = useState([]);
 
+  const pronounceWord = (word) => {
+    const utterance = new SpeechSynthesisUtterance(word);
+    utterance.lang = "ja-JP";
+    window.speechSynthesis.speak(utterance);
+  };
+
   useEffect(() => {
     const remainingData = [...datas].filter((data) => data.Lesson_no == id);
     if (remainingData) {
@@ -48,6 +54,7 @@ const LessonDetails = () => {
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 w-11/12 mx-auto ">
         {lessonsData.map((item) => (
           <div
+            onClick={() => pronounceWord(item.pronunciation)}
             key={item.Id}
             className={`border p-6 rounded-xl cursor-pointer shadow-lg shadow-button ${
               item.difficulty === "easy"
